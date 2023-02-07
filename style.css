@@ -1,0 +1,281 @@
+/* Define global styles */
+:root {
+  --main-color: #2196f3; /* Main brand color */
+  --main-color-alt: #1787e0; /* Alternative brand color */
+  --main-transition: 0.4s; /* Transition duration for hover effects */
+  --hover-background: #23b8f157; /* Background color on hover */
+  --main-animation: 0.5s; /* Animation duration */
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for all elements */
+}
+
+/* Reset default styles for all elements */
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "open Sans", "Sans-serif"; /* Set default font */
+}
+
+/* Remove focus outline */
+/* *:focus {
+    outline: none;
+  } */
+
+/* Remove underline for all links */
+a {
+  text-decoration: none;
+}
+
+/* Remove list styles for unordered lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Container styles */
+.container {
+  padding-left: 15px; /* Left padding */
+  padding-right: 15px; /* Right padding */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+/* Media queries for different screen sizes */
+@media (min-width: 768px) {
+  .container {
+    width: 750px; /* Width for small screens */
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px; /* Width for medium screens */
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1370px; /* Width for large screens */
+  }
+}
+header {
+  background-image: url(./madiabird2.png);
+
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+header .container .logo {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    font-size: 40px;
+    text-transform: capitalize;
+
+    text-shadow: 3px 2px 3px #3800ff, 4px 3px 2px #000aff, 5px 4px 2px #b565f7;
+}
+header .container > ul {
+  display: flex;
+}
+ 
+header .container > ul > li > a {
+    padding: 0 20px;
+  display: flex;
+  height: 90px; 
+  align-items: center;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+  overflow: hidden;
+  z-index: 11;
+}
+header .container > ul > li > a::before {
+  content: "";
+  width: 100%;
+  height:6px;
+  background-color: #1787e0;
+  position: absolute;
+  left: -100%;
+  bottom: 10px;
+  transition: var(--main-transition);
+}
+header .container > ul > li > a::after {
+content: "";
+width: 0;
+height: calc(100% - 26px);
+background-color: #9858d8;
+position:absolute;
+right: -100%;
+top: 10px;
+transition: var(--main-transition);
+z-index: -11;
+}
+
+header .container >ul> li> a:hover::after{
+    right: 0;
+    width: 100%;
+}
+
+header .container >ul >li >a:hover::before {
+  left: 0;
+}
+header .container >ul >li >a:hover{
+    color: white;
+    
+    transition: var(--main-transition);
+}
+header .container > ul li:first-child{
+    position: relative;
+}
+header .megamenue{
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 150%;
+    /* padding: 20px; */
+    /* border-bottom: 3px solid var(--main-color); */
+    /* gap: 40px; */
+    z-index: 555;
+    transition: top var(--main-transition), opacity 0.5s;
+    top: 200px;
+    opacity: 0;
+    visibility: hidden;
+ 
+}
+header .container > ul .megamenue li a {
+    display: flex;
+   padding: 10px 20px;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: black;
+   border-bottom: #eeee     solid 2px;
+}
+header .container > ul .megamenue li a:hover{
+    transition: var(--main-transition);
+    font-weight: bolder;
+color:#9858d8;
+}
+
+header .container > ul .megamenue li{
+    position: relative;
+}
+header .container > ul .megamenue li a::before{
+    content: "";
+    width: 0;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #9858d8;
+transition: var(--main-transition);
+
+}
+header .container > ul .megamenue li a:hover::before{
+width: 100%;
+}
+header .container > ul li:first-child:hover .megamenue {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+ background-color: white;
+}
+
+
+
+header .container .login {
+  display: flex;
+  align-items: center;
+  height: 90px;
+}
+header .container .login a {
+  padding: 0 20px;
+  color: white;
+  font-weight: bold;
+  border: solid 1px rgba(255, 255, 255, 0.6);
+  margin-left: 20px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  transition: var(--main-transition);  
+}
+header .container .login a:hover{
+    border-color:white ;
+}
+.home{
+    background-color: white;
+    position: relative;
+    background-image: url(./madiabird2.png);
+}
+.home .container{
+    display: flex;
+align-items: center;
+height: calc(100vh - 90px);
+justify-content: space-between;
+}
+
+ 
+.home .container .text{
+}
+.home .container .text h1{
+    margin-bottom: 25px ;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+     font-size: 52px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+}
+.home .container .text h4{
+    color: rgba(255, 255, 255, 0.8);
+    margin: 10px 0 0 0;
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 10px 0 0 0;
+}
+.home .container .text span:first-of-type{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-top: 30px;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 20px;
+    font-family: 'Droid Arabic Kufi','Tajawal';
+    font-weight: bold;
+    color: #fff;
+    background: #0ac065; 
+}
+.home .container .text span:last-of-type{
+    margin-left: 40px;
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-top: 30px;
+    border: 2px solid #fff; 
+       background: #FFC812;
+    
+    }
+.home .fa-brands{
+    padding-left: 10px;
+}
